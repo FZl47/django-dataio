@@ -1,0 +1,9 @@
+[] Add templates
+[] Add tests
+[] Add URL handlers by Django model
+[] Fix X position
+[] Add logs
+[] Add import field checker
+[] Add FK/M2m Support
+[] Add more formats
+
