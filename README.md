@@ -29,9 +29,9 @@ from django.db import models
 from django_dataio.mixins import DjangoDataIOModelMixin
 
 class Customer(DjangoDataIOModelMixin, models.Model): # -> Here!
-first_name = models.CharField(max_length=50)
-last_name = models.CharField(max_length=50)
-email = models.EmailField(unique=True)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.EmailField(unique=True)
 ```
    
 
@@ -76,14 +76,14 @@ print(f"{imported_count} records imported")
 
 #### You can add custom exporters or importers by subclassing the base classes:
 ```python
-    from django_dataio.handlers.imports import BaseImporter
-    from django_dataio.handlers.exports import BaseExporter
+from django_dataio.handlers.imports import BaseImporter
+from django_dataio.handlers.exports import BaseExporter
 
-    class CSVExporter(BaseExporter):
-        ...
-    
-    class CSVImporter(BaseImporter):
-        ...
+class CSVExporter(BaseExporter):
+    ...
+
+class CSVImporter(BaseImporter):
+    ...
 ```
 Check the [Export](https://github.com/FZl47/django-dataio/blob/main/src/django_dataio/handlers/exports/base.py) | [Import](https://github.com/FZl47/django-dataio/blob/main/src/django_dataio/handlers/imports/base.py) handlers implementation for details.
 
